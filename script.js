@@ -1,4 +1,23 @@
 const SKILLS = [
+  { name: "Aqua Wudhu Flow", tags: ["khushu", "tazkiyah"], path: "Syariat" },
+  { name: "Ego Disintegration Field", tags: ["ikhlas", "ego"], path: "Hakikat" },
+  { name: "Truth Awakening Pulse", tags: ["sidq", "muhasabah"], path: "Hakikat" },
+  { name: "Nafs Suppression Protocol", tags: ["wara", "mujahadah"], path: "Tarekat" },
+  { name: "Sabr Fortress Array", tags: ["sabr"], path: "Tarekat" },
+  { name: "Gratitude Resonance", tags: ["syukur"], path: "Syariat" },
+  { name: "Tawakkal Anchor", tags: ["tawakkal"], path: "Ma'rifat" },
+  { name: "Istighfar Rain", tags: ["istighfar", "taubah"], path: "Syariat" },
+  { name: "Silence of Mirrors", tags: ["muhasabah"], path: "Hakikat" },
+  { name: "Humility Gravity Well", tags: ["ikhlas", "tawadhu"], path: "Hakikat" },
+  { name: "Gaze Lowering Veil", tags: ["wara"], path: "Syariat" },
+  { name: "Intention Recalibration", tags: ["ikhlas", "niyyah"], path: "Tarekat" },
+  { name: "Breath of Dhikr", tags: ["khushu"], path: "Tarekat" },
+  { name: "Mercy Expansion Wave", tags: ["hilm"], path: "Tarekat" },
+  { name: "Doubt Clarification Beacon", tags: ["sidq", "yaqin"], path: "Hakikat" },
+  { name: "Presence Lock Sigil", tags: ["khushu"], path: "Syariat" },
+  { name: "Attachment Severance Step", tags: ["tawakkal", "zuhd"], path: "Ma'rifat" },
+  { name: "Heart Audit Drone", tags: ["muhasabah"], path: "Hakikat" },
+  { name: "Soft Tongue Protocol", tags: ["hilm"], path: "Syariat" }
   { name: "Aqua Wudhu Flow", tags: ["khushu", "tazkiyah"] },
   { name: "Ego Disintegration Field", tags: ["ikhlas", "ego"] },
   { name: "Truth Awakening Pulse", tags: ["sidq", "muhasabah"] },
@@ -85,6 +104,17 @@ function renderChoices() {
     const btn = document.createElement("button");
     btn.className = "skill-btn";
     btn.type = "button";
+    btn.disabled = state.gameOver;
+
+    const title = document.createElement("strong");
+    title.textContent = choice.name;
+
+    const meta = document.createElement("span");
+    meta.className = "skill-meta";
+    meta.textContent = `[${choice.path}]`;
+
+    btn.appendChild(title);
+    btn.appendChild(meta);
     btn.textContent = choice.name;
     btn.disabled = state.gameOver;
     btn.addEventListener("click", () => resolveTurn(choice));
