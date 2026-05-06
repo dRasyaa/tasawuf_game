@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasawuf Battle Loop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Tasawuf Battle Loop</h1>
+      <p class="subtitle">Decision-based spiritual roguelike</p>
+    </header>
+
+    <section class="status-card">
+      <div class="tasawuf-stat">
+        <div class="avatar-placeholder" aria-hidden="true"></div>
+        <div>
+          <p class="label">Tasawuf Level</p>
+          <p id="tasawuf-value" class="value">50</p>
+        </div>
+      </div>
+      <div>
+        <p class="label">Turn</p>
+        <p id="turn-value" class="value">1</p>
+      </div>
+      <div class="meter-wrap">
+        <div class="meter-bg">
+          <div id="meter-fill" class="meter-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-card">
+      <h2>Situasi Batin</h2>
+      <p id="event-text"></p>
+    </section>
+
+    <section>
+      <h2>Pilih Aksimu</h2>
+      <div id="skills-grid" class="skills-grid"></div>
+    </section>
+
+    <section class="log-card">
+      <p id="feedback-text">Baca keadaan hatimu, lalu pilih kemampuan yang paling selaras.</p>
+      <button id="restart-btn" class="hidden">Mulai Ulang Perjalanan</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
