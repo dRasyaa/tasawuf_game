@@ -18,6 +18,25 @@ const SKILLS = [
   { name: "Attachment Severance Step", tags: ["tawakkal", "zuhd"], path: "Ma'rifat" },
   { name: "Heart Audit Drone", tags: ["muhasabah"], path: "Hakikat" },
   { name: "Soft Tongue Protocol", tags: ["hilm"], path: "Syariat" }
+  { name: "Aqua Wudhu Flow", tags: ["khushu", "tazkiyah"] },
+  { name: "Ego Disintegration Field", tags: ["ikhlas", "ego"] },
+  { name: "Truth Awakening Pulse", tags: ["sidq", "muhasabah"] },
+  { name: "Nafs Suppression Protocol", tags: ["wara", "mujahadah"] },
+  { name: "Sabr Fortress Array", tags: ["sabr"] },
+  { name: "Gratitude Resonance", tags: ["syukur"] },
+  { name: "Tawakkal Anchor", tags: ["tawakkal"] },
+  { name: "Istighfar Rain", tags: ["istighfar", "taubah"] },
+  { name: "Silence of Mirrors", tags: ["muhasabah"] },
+  { name: "Humility Gravity Well", tags: ["ikhlas", "tawadhu"] },
+  { name: "Gaze Lowering Veil", tags: ["wara"] },
+  { name: "Intention Recalibration", tags: ["ikhlas", "niyyah"] },
+  { name: "Breath of Dhikr", tags: ["khushu"] },
+  { name: "Mercy Expansion Wave", tags: ["hilm"] },
+  { name: "Doubt Clarification Beacon", tags: ["sidq", "yaqin"] },
+  { name: "Presence Lock Sigil", tags: ["khushu"] },
+  { name: "Attachment Severance Step", tags: ["tawakkal", "zuhd"] },
+  { name: "Heart Audit Drone", tags: ["muhasabah"] },
+  { name: "Soft Tongue Protocol", tags: ["hilm"] }
 ];
 
 const EVENTS = [
@@ -96,6 +115,8 @@ function renderChoices() {
 
     btn.appendChild(title);
     btn.appendChild(meta);
+    btn.textContent = choice.name;
+    btn.disabled = state.gameOver;
     btn.addEventListener("click", () => resolveTurn(choice));
     skillsGrid.appendChild(btn);
   });
